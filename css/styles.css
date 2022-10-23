@@ -13,6 +13,7 @@
     --hero-button-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     --card-gap: 30px;
     --card-border: 1px solid #EEEEEE;
+    --card-shadow-hover: 0px 4px 4px rgba(0, 0, 0, 0.25);
     --clients-border: #AFB1B8;
     --hero-gradient: rgba(47, 48, 58, 0.4);
     --footer-socials-bg: rgba(255, 255, 255, 0.1);
@@ -61,6 +62,11 @@ h1, h2, h3, p {
 
 }
 
+a {
+    font-style: normal;
+    text-decoration: none;
+    }
+
 
 /* HEADER */
 
@@ -93,10 +99,11 @@ color: var(--title-color);
 .contact {
     color: var(--text-color);
     line-height: 1.14;
+    font-weight: 500;
 }
 
 .nav, .contact {
-    display: inline-block;
+    display: block;
     padding: 32px 0;
 }
 
@@ -129,7 +136,21 @@ margin-left:0;
    margin-right: 93px;
 }
 
+.contact-list > .item svg {
+    margin-right: 10px;   
+}
 
+.contact-list .link {
+    align-items: center;
+}
+
+.icon {
+    fill: var(--clients-border);
+}
+
+.contact:hover .icon {
+    fill: var(--brand-color);
+}
 
 
 
@@ -244,10 +265,6 @@ margin-top: 0;
 
 }
 
-.icon {
- 
-}
-
 
 .thumb {
     background-color:var(--section-color);
@@ -343,6 +360,15 @@ line-height: 1.19;
     padding: 12px;
 }
 
+.socials > .item .link:hover .icon {
+    fill: var(--white-color);
+}
+
+.socials > .item .link:hover {
+    background-color: var(--brand-color);
+    border-radius: 50%;
+}
+
 
 /* НАШІ КЛІЄНТИ */
 
@@ -362,6 +388,14 @@ line-height: 1.19;
     border: 1px solid;
     border-color: var(--clients-border);
     border-radius: 4px;
+}
+
+.clients > .item .link:hover {
+    border-color: var(--brand-color);
+}
+
+.clients > .item .link:hover .icon {
+    fill: var(--brand-color);
 }
 
 
@@ -420,10 +454,16 @@ address {
     margin-right: 70px;
 }
 
+.footer-div {
+    margin-top: 12px;
+}
+
 .footer-div .link {
+    display: block;
     background-color: var(--footer-socials-bg);
     border-radius: 50%;
     padding: 12px;
+    height: 44px;
     
 }
 
@@ -435,10 +475,15 @@ address {
     margin-right: 10px;
 }
 
-
-.icon {
-    fill: red
+.icon-white {
+    fill: var(--white-color);
 }
+
+.footer-div .link:hover {
+    background-color: var(--brand-color);
+}
+
+
 /* ПОРТФОЛІО */
 
 
@@ -476,10 +521,6 @@ padding: 6px 22px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* margin-right: -30px;
-    margin-bottom: -30px; */
-
-
 
 }
 
@@ -487,10 +528,14 @@ padding: 6px 22px;
     flex-basis: calc((100% - 60px) / 3);
     margin-right: var(--card-gap);
     margin-bottom: var(--card-gap);
-  
+
 }
 
-
+.card:hover {
+    /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    box-shadow: var(--card-shadow-hover);
+    
+}
 
 
 
@@ -506,7 +551,6 @@ padding: 6px 22px;
 .filter-button:focus {
     color: var(--white-color);
     background-color: var(--brand-color);
-   
     box-shadow: var(--button-shadow);
  
 }
@@ -514,10 +558,10 @@ padding: 6px 22px;
 .project {
     color: var(--title-color);
     font-weight: 700;
-font-size: 18px;
-line-height: 2;
-letter-spacing: 0.06em;
-margin-bottom: 4px;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
 }
 
 .project-description {
